@@ -48,7 +48,8 @@ def main():
     )
 
     print("Training complete.")
-    print(f"Best weights saved in: {Path(args.project) / args.name / 'weights' / 'best.pt'}")
+    save_dir = getattr(model.trainer, "save_dir", Path(args.project) / args.name)
+    print(f"Best weights saved in: {Path(save_dir) / 'weights' / 'best.pt'}")
 
 
 if __name__ == "__main__":

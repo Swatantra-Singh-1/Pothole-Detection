@@ -38,6 +38,11 @@ This project is a starter pothole detection pipeline for a 4th-year road monitor
    python src/train_model.py --data data/pothole_dataset.yaml --epochs 20 --imgsz 640
    ```
 
+   If the Kaggle dataset is stored at `E:/archive`, use the local configuration:
+   ```bash
+   python src/train_model.py --data data/archive_dataset.yaml --epochs 30 --imgsz 640
+   ```
+
 3. Run inference:
    ```bash
    python src/detect_potholes.py --source path/to/image.jpg --weights runs/train/exp/weights/best.pt
