@@ -1,5 +1,5 @@
-path: data
-train: images/train
-val: images/val
+path: archive
+train: train/images
+val: valid/images
 nc: 1
 names: ['pothole']

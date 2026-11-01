@@ -48,7 +48,14 @@ This project is a starter pothole detection pipeline for a 4th-year road monitor
    python src/detect_potholes.py --source path/to/image.jpg --weights runs/train/exp/weights/best.pt
    ```
 
-4. Rank cities by pothole density:
+4. Run live detection with a USB NMEA GPS receiver (replace `COM3` with the receiver's port):
+   ```powershell
+   python src/detect_potholes.py --source 0 --gps-port COM3 --weights runs/train/pothole_30ep/weights/best.pt
+   ```
+
+   Detections are saved to `data/pothole_detections.sqlite3`, one row per tracked pothole per run. Each row includes a Google Maps URL. The saved location is the camera's GPS fix when the pothole first appears, so it is an approximate pothole location; precise object coordinates require camera calibration and distance/heading estimation. For image or video inference without GPS logging, omit `--gps-port`.
+
+5. Rank cities by pothole density:
    ```bash
    python src/city_ranking.py --input data/example_city_reports.csv --area-file data/city_area_reference.csv
    ```

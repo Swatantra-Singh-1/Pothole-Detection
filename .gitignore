@@ -1,8 +1,28 @@
+# Python virtual environments
+venv/
+venv311/
+venv-gpu312/
 .venv/
+
+# Python cache
 __pycache__/
 *.py[cod]
-*.pt
+*.pyo
+
+# Model training outputs
 runs/
-data/archive_dataset.yaml
-*.log
+*.pt
+*.pth
+*.onnx
+
+# IDE files
+.vscode/
+.idea/
+
+# Environment variables
 .env
+
+/archive/
+
+# Logs and databases
+*.log
